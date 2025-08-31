@@ -7,12 +7,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link rel="icon" href="/favicon.ico">
-        <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+        <link rel="icon" href="favicon.ico">
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <style>
         /* --- スマホ表示でフッター情報を非表示 --- */
         @media screen and (max-width: 736px) {
@@ -21,30 +21,82 @@
             }
         }
         </style>
-    </head>
+    
+<style>
+/* --- Ensure slider shows entire image without cropping --- */
+.image-video-slider {
+  background: #ffffff;
+}
+.image-video-slider .slick-list,
+.image-video-slider .slick-track,
+.image-video-slider .slick-slide {
+  height: 42vh !important;
+  max-height: 560px;
+}
+@media (max-width: 768px){
+  .image-video-slider .slick-list,
+  .image-video-slider .slick-track,
+  .image-video-slider .slick-slide {
+    height: 52vh !important;
+    max-height: 420px;
+  }
+}
+.image-video-slider .slick-slide > div {
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.image-video-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important; /* show whole image (letterboxed) */
+}
+</style>
+
+
+<style>
+/* --- Orange CTA Button (outside slider) --- */
+.cta-wrap { display:flex; justify-content:center; margin: 22px 0 6px; }
+a.cta-orange{
+  display:inline-flex; align-items:center; gap:.6rem;
+  padding: .85rem 1.35rem; border-radius:9999px; text-decoration:none;
+  font-weight:800; letter-spacing:.02em; font-size:1.02rem;
+  color:#fff; background: linear-gradient(135deg,#ff7a18,#ff4b2b);
+  box-shadow: 0 10px 22px rgba(255,104,48,.35), 0 2px 6px rgba(0,0,0,.12);
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+a.cta-orange:hover{ transform: translateY(-1px); filter: brightness(1.03);
+  box-shadow: 0 14px 28px rgba(255,104,48,.45), 0 4px 10px rgba(0,0,0,.14);
+}
+a.cta-orange:active{ transform: translateY(0); }
+</style>
+
+</head>
     <body class="right-sidebar is-preload">
         <div id="page-wrapper">
 
             <header id="header">
                 <h1 id="logo">
-                    <a href="/">
-                        <img src="/images/logo01.JPG" alt="Aspira Logo" style="height: 50px; vertical-align: middle;">
+                    <a href="index.html">
+                        <img src="images/logo01.JPG" alt="Aspira Logo" style="height: 50px; vertical-align: middle;">
                         <span class="logo-text">ASPIRA</span>
                     </a>
                 </h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="/">ホーム</a></li>
-                        <li><a href="/company.html">会社紹介</a></li>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="company.html">会社紹介</a></li>
                         <li class="submenu">
                             <a href="#">事業紹介</a>
                             <ul>
-                                <li><a href="/nexsign.html">イベントプロデュース</a></li>
-                                <li><a href="/miral.html">AIソリューション</a></li>
-                                <li><a href="/aural.html">AI電話オペレーター</a></li>
+                                <li><a href="nexsign.html">イベントプロデュース</a></li>
+                                <li><a href="miral.html">AIソリューション</a></li>
+                                <li><a href="aural.html">AI電話オペレーター</a></li>
                             </ul>
                         </li>
-                        <li><a href="/contact.html" class="button primary">お問い合わせ</a></li>
+                        <li><a href="contact.html" class="button primary">お問い合わせ</a></li>
                     </ul>
                 </nav>
             </header>
@@ -52,7 +104,7 @@
             <article id="main">
 
                 <header class="special container" data-aos="fade-down">
-                    <img src="/images/logo03.jpg" alt="MIRAL Logo" style="height: 120px; margin-bottom: 1.5em;">
+                    <img src="images/logo03.jpg" alt="MIRAL Logo" style="height: 120px; margin-bottom: 1.5em;">
                     <h2>AIソリューション事業 (MIRAL)</h2>
                     <p>データに基づいた高精度な予測で、お客様の事業計画を強力にサポートします。</p>
                 </header>
@@ -63,15 +115,25 @@
                             <div class="col-8 col-12-narrower" data-aos="fade-right">
 
                                 <div class="content">
+
+
+<div class="cta-wrap">
+  <a class="cta-orange" href="MIRAL_introduce.html" aria-label="MIRALのホームページはこちら">MIRALのホームページはこちら</a>
+</div>
+
                                     <section>
                                         <div class="image-video-slider">
                                             <div>
-                                                <img src="/images/miral_dashboard.png" alt="MIRAL ダッシュボード" style="object-position:top left;"/>
+                                                <img src="images/miral_dashboard.png" alt="MIRAL ダッシュボード" style="object-position:top left;"/>
                                             </div>
                                             <div>
-                                                <img src="/images/miral_graph.png" alt="MIRAL 分析グラフ" style="object-position:top left;"/>
+                                                <img src="images/miral_graph.png" alt="MIRAL 分析グラフ" style="object-position:top left;"/>
                                             </div>
-                                        </div>
+                                        
+        <div>
+            <img src="images/miral_sampu.png" alt="MIRAL サンプル画面" style="object-position:top left;"/>
+        </div>
+</div>
                                         <header>
                                             <h3>AIが導き出す、店舗ごとの最適化された売上目標</h3>
                                         </header>
@@ -96,7 +158,7 @@
                                         <p>お客様の業種や店舗の状況に合わせて、AIシステムの最適な活用方法をご提案します。まずはお気軽にご相談ください。</p>
                                         <footer>
                                             <ul class="buttons">
-                                                <li><a href="/contact.html" class="button small">お問い合わせ</a></li>
+                                                <li><a href="contact.html" class="button small">お問い合わせ</a></li>
                                             </ul>
                                         </footer>
                                     </section>
@@ -123,12 +185,12 @@
                         <div class="col-4" style="text-align: left;">
                             <h4>サイトマップ</h4>
                             <ul style="list-style: none; padding-left: 0;">
-                                <li><a href="/">ホーム</a></li>
-                                <li><a href="/company.html">会社紹介</a></li>
-                                <li><a href="/nexsign.html">イベントプロデュース</a></li>
-                                <li><a href="/miral.html">AIソリューション</a></li>
-                                <li><a href="/aural.html">AI電話オペレーター</a></li>
-                                <li><a href="/contact.html">お問い合わせ</a></li>
+                                <li><a href="index.html">ホーム</a></li>
+                                <li><a href="company.html">会社紹介</a></li>
+                                <li><a href="nexsign.html">イベントプロデュース</a></li>
+                                <li><a href="miral.html">AIソリューション</a></li>
+                                <li><a href="aural.html">AI電話オペレーター</a></li>
+                                <li><a href="contact.html">お問い合わせ</a></li>
                             </ul>
                         </div>
                         <div class="col-4" style="text-align: left;">
@@ -144,16 +206,16 @@
 
         </div>
 
-        <script src="/assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-            <script src="/assets/js/jquery.dropotron.min.js"></script>
-            <script src="/assets/js/jquery.scrolly.min.js"></script>
-            <script src="/assets/js/jquery.scrollgress.min.js"></script>
-            <script src="/assets/js/jquery.scrollex.min.js"></script>
-            <script src="/assets/js/browser.min.js"></script>
-            <script src="/assets/js/breakpoints.min.js"></script>
-            <script src="/assets/js/util.js"></script>
-            <script src="/assets/js/main.js"></script>
+            <script src="assets/js/jquery.dropotron.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/jquery.scrollgress.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
             <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
             <script>
                 // AOSの初期化
