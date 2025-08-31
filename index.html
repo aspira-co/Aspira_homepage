@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>株式会社Aspira (アスパイア) - テクノロジーを用いた総合解決企業</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="icon" href="/favicon.ico">
+        <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+        <style>
+        /* --- 商品紹介セクションの高さ揃え --- */
+        .wrapper.style3 .row {
+            align-items: stretch; /* カラムの高さを揃える */
+        }
+        .wrapper.style3 .row > [class*="col-"] > section {
+            display: flex;          /* Flexboxを有効にする */
+            flex-direction: column; /* 子要素を縦に並べる */
+            height: 100%;           /* 親要素（カラム）の高さ全体に広げる */
+        }
+        .wrapper.style3 .row > [class*="col-"] > section > header {
+            min-height: 120px; /* ヘッダーの最小の高さを指定（数値を調整してください） */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .wrapper.style3 .row > [class*="col-"] > section > p {
+            flex-grow: 1; /* 説明文エリアが余白を埋めるように伸びる */
+        }
+        /* ------------------------------------ */
+        .image-sizing {
+            height: 150px; /* 画像を囲むaタグの高さ。必要に応じて調整してください */
+            display: flex; /* 画像を中央に配置するためにflexboxを使用 */
+            justify-content: center; /* 水平方向の中央揃え */
+            align-items: center; /* 垂直方向の中央揃え */
+            margin-bottom: 1em; /* 下部に余白を追加 */
+        }
+
+        .image-sizing img {
+            max-height: 100%; /* 親要素の高さに合わせて画像を最大化 */
+            width: auto; /* アスペクト比を維持 */
+            max-width: 100%; /* 親要素の幅に合わせて画像を最大化 */
+            object-fit: contain; /* 画像がコンテナに収まるように調整 */
+        }
+        /* --- スマホ表示でフッター情報を非表示 --- */
+        @media screen and (max-width: 736px) {
+            #footer .container.medium {
+                display: none;
+            }
+        }
+        </style>
+    </head>
+    <body class="index is-preload">
+        <div id="page-wrapper">
+
+            <header id="header" class="alt">
+                <h1 id="logo">
+                    <a href="/">
+                        <img src="/images/logo01.JPG" alt="Aspira Logo" style="height: 50px; vertical-align: middle;">
+                        <span class="logo-text">ASPIRA</span>
+                    </a>
+                </h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/">ホーム</a></li>
+                        <li><a href="/company.html">会社紹介</a></li>
+                        <li class="submenu">
+                            <a href="#">事業紹介</a>
+                            <ul>
+                                <li><a href="/nexsign.html">イベントプロデュース</a></li>
+                                <li><a href="/miral.html">AIソリューション</a></li>
+                                <li><a href="/aural.html">AI電話オペレーター</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/contact.html" class="button primary">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section id="banner">
+                
+                <div id="handwriting-animation"></div>
+
+                <video autoplay loop muted playsinline id="bg-video">
+                    <source src="/videos/macau_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <div class="inner">
+                    <header>
+                        <img src="/images/logo01.JPG" alt="Aspira Logo" style="max-width: 80%; height: auto; max-height: 250px;">
+                    </header>
+                    <footer>
+                        <ul class="buttons stacked">
+                            <li><a href="#main" class="button fit scrolly">詳しくはこちら</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </section>
+
+            <article id="main">
+
+                <header class="special container" data-aos="fade-up">
+                    <span class="icon solid fa-chart-bar"></span>
+                    <h2>新しいビジネスを生み出す<br />
+                        デジタルイノベーター</h2>
+                    <p style="margin-top: 1em; color: #777;">クライアントやユーザーとアイデアを出し合いながら、ビジネスモデルを設計。<br />
+                        必要な技術を選定してアイデアの迅速な実現を目指します。</p>
+                </header>
+
+                <section class="wrapper style2 container special-alt" data-aos="fade-in">
+                    <div class="row gtr-50">
+                        <div class="col-8 col-12-narrower">
+                            <header>
+                                <h2><strong>信念に基づく、唯一無二のソリューション</strong></h2>
+                            </header>
+                            <p>信念をもってクライアントの問題解決に向き合う我々は、可能な限りシームレスに業務を進められるように努めています。クライアントの目標や事業内容、プロジェクトの種類に応じてカスタマイズされた一連のサービスを提供。独創的なアイデアを生み出すスペシャリストとして、プロジェクト実現のために、世に二つとないソリューションを提案いたします。</p>
+                        </div>
+                        <div class="col-4 col-12-narrower imp-narrower">
+                            <ul class="featured-icons">
+                                <li><span class="icon solid fa-lightbulb"><span class="label">アイデア</span></span></li>
+                                <li><span class="icon solid fa-chart-pie"><span class="label">データ駆動</span></span></li>
+                                <li><span class="icon solid fa-rocket"><span class="label">迅速性</span></span></li>
+                                <li><span class="icon solid fa-users"><span class="label">顧客中心</span></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="wrapper style3 container special">
+
+                    <header class="major">
+                        <h2><strong>私たちの商品</strong></h2>
+                    </header>
+
+                    <div class="row">
+                        <div class="col-4 col-12-narrower" data-aos="fade-up" data-aos-delay="100">
+                            <section>
+                                <a href="/nexsign.html" class="image-sizing image featured"><img src="/images/logo02.jpg" alt="NEXSIGN Logo" /></a>
+                                <header>
+                                    <h3><strong>枠にとらわれない発想で、<br>イベントをプロデュース</strong></h3>
+                                </header>
+                                <p>私たちは、クライアント様の目的やニーズに徹底的に寄り添い、心に残るイベントを創造するプロフェッショナルです。パチンコホールでの集客イベントをはじめ、多様な業種・業態に対応した企画・運営で豊富な実績を誇ります。タレントやインフルエンサーのキャスティングから当日のアテンド、さらには革新的な企画のご提案まで、あらゆるご要望に一貫したトータルサポートで対応可能です。</p>
+                                <footer>
+                                    <ul class="buttons">
+                                        <li><a href="/nexsign.html" class="button">詳しくはこちら</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrower" data-aos="fade-up" data-aos-delay="200">
+                            <section>
+                                <a href="/miral.html" class="image-sizing image featured"><img src="/images/logo03.jpg" alt="MIRAL Logo" /></a>
+                                <header>
+                                    <h3><strong>AIが導き出す、<br>店舗ごとの最適化された売上目標</strong></h3>
+                                </header>
+                                <p>私たちのAI売上予測システムは、店舗ごとの状況に深くコミットし、高精度な売上目標を自動で算出します。天気、曜日、商圏の地理的条件、さらには時間帯別の動向といった膨大なデータを独自のAIが解析し、未来の売上を予測。これにより、来月の売上目標を的確に設定し、より緻密で効率的な事業計画の立案をサポートします。</p>
+                                <footer>
+                                    <ul class="buttons">
+                                        <li><a href="/miral.html" class="button">詳しくはこちら</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrower" data-aos="fade-up" data-aos-delay="300">
+                            <section>
+                                <a href="/aural.html" class="image-sizing image featured"><img src="/images/logo04.png" alt="AURAL Logo" /></a>
+                                <header>
+                                    <h3><strong>24時間365日、顧客を逃さない<br>新しいオペレーション体験</strong></h3>
+                                </header>
+                                <p>AURALは、企業の窓口をいつでも開き続ける次世代のAIオペレーターです。営業時間や人員に制約されず、昼夜を問わず顧客の声に応えられることで、取りこぼしのない確実なコミュニケーションを実現します。「問い合わせがつながらない」「返答が遅れる」といった不満を解消し、常に安定した応対品質を維持。結果として顧客の安心感と満足度を高め、企業の信頼を一層強固なものにします。</p>
+                                <footer>
+                                    <ul class="buttons">
+                                        <li><a href="/aural.html" class="button">詳しくはこちら</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                    </div>
+
+                </section>
+
+            </article>
+
+            <section id="cta">
+                <header>
+                    <h2><strong>お問い合わせはこちらから</strong></h2>
+                </header>
+                <footer>
+                    <ul class="buttons">
+                        <li><a href="/contact.html" class="button primary">お問い合わせフォームへ</a></li>
+                    </ul>
+                </footer>
+            </section>
+
+            <footer id="footer">
+                <div class="container medium">
+                    <div class="row">
+                        <div class="col-4" style="text-align: left;">
+                            <h4>株式会社Aspira</h4>
+                            <p>
+                                〒880-0033<br />
+                                宮崎県宮崎市神宮西 1−11 701<br />
+                                contact@aspira-co.jp<br />
+                            </p>
+                        </div>
+                        <div class="col-4" style="text-align: left;">
+                            <h4>サイトマップ</h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li><a href="/">ホーム</a></li>
+                                <li><a href="/company.html">会社紹介</a></li>
+                                <li><a href="/nexsign.html">イベントプロデュース</a></li>
+                                <li><a href="/miral.html">AIソリューション</a></li>
+                                <li><a href="/aural.html">AI電話オペレーター</a></li>
+                                <li><a href="/contact.html">お問い合わせ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4" style="text-align: left;">
+                            <h4>Follow Us</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="copyright" style="margin-top: 3em;">
+                    <li>&copy; Aspira Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <script src="/assets/js/jquery.min.js"></script>
+            <script src="/assets/js/jquery.dropotron.min.js"></script>
+            <script src="/assets/js/jquery.scrolly.min.js"></script>
+            <script src="/assets/js/jquery.scrollex.min.js"></script>
+            <script src="/assets/js/browser.min.js"></script>
+            <script src="/assets/js/breakpoints.min.js"></script>
+            <script src="/assets/js/util.js"></script>
+            <script src="/assets/js/main.js"></script>
+            
+            <script src="https://cdn.jsdelivr.net/npm/vivus@0.4.5/dist/vivus.min.js"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                // AOSの初期化
+                AOS.init();
+
+                // 手書きアニメーションの初期化
+                new Vivus('handwriting-animation', {
+                    duration: 75,
+                    file: '/images/A0.svg',
+                    type: 'oneByOne',
+                    start: 'autostart'
+                });
+            </script>
+
+    </body>
+</html>
