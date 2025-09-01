@@ -4,43 +4,29 @@ document.addEventListener("DOMContentLoaded", () => {
   if (y) y.textContent = new Date().getFullYear();
 });
 
-// カウンタ（見えたら起動）
-const counters = document.querySelectorAll(".count");
+// カウンタ
 const runCounter = (el) => {
   const end = Number(el.dataset.count || "0");
   const step = Math.max(1, Math.floor(end / 60));
   let cur = 0;
   const tick = () => {
     cur += step;
-    if (cur >= end) { cur = end; }
+    if (cur >= end) cur = end;
     el.textContent = String(cur);
     if (cur < end) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
 };
-const onVisible = (entries, obs) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll(".count").forEach(runCounter);
-      obs.unobserve(e.target);
-    }
-  });
-};
 const heroStats = document.querySelector(".hero-stats");
-if (heroStats) new IntersectionObserver(onVisible, { threshold: 0.4 }).observe(heroStats);
-
-// メールコピー
-const copyBtn = document.getElementById("copyEmail");
-if (copyBtn) {
-  copyBtn.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText("contact@aspira-corporate.jp");
-      copyBtn.textContent = "コピーしました";
-      setTimeout(()=> copyBtn.textContent = "メールアドレスをコピー", 1500);
-    } catch {
-      window.location.href = "mailto:contact@aspira-corporate.jp";
-    }
-  });
+if (heroStats) {
+  new IntersectionObserver((entries, obs) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll(".count").forEach(runCounter);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 }).observe(heroStats);
 }
 
 // モバイルナビ
@@ -56,4 +42,10 @@ const setNav = (open) => {
 };
 menuBtn?.addEventListener("click", () => setNav(!nav.classList.contains("open")));
 overlay?.addEventListener("click", () => setNav(false));
+
+// ✅ ここを追加：モバイルでリンクを押したら必ず閉じる／ハッシュ変化でも閉じる／スクロール開始でも閉じる
+const closeOnMobile = () => { if (window.innerWidth <= 900) setNav(false); };
+document.querySelectorAll("[data-nav] a").forEach(a => a.addEventListener("click", closeOnMobile));
+window.addEventListener("hashchange", closeOnMobile);
+window.addEventListener("scroll", closeOnMobile, { passive: true });
 window.addEventListener("resize", () => { if (window.innerWidth > 900) setNav(false); });
