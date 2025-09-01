@@ -1,10 +1,10 @@
-// Year
+// 年号
 document.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 });
 
-// Counter animation
+// カウンタ（見えたら起動）
 const counters = document.querySelectorAll(".count");
 const runCounter = (el) => {
   const end = Number(el.dataset.count || "0");
@@ -13,7 +13,7 @@ const runCounter = (el) => {
   const tick = () => {
     cur += step;
     if (cur >= end) { cur = end; }
-    el.textContent = cur.toString();
+    el.textContent = String(cur);
     if (cur < end) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
@@ -26,24 +26,24 @@ const onVisible = (entries, obs) => {
     }
   });
 };
-const hero = document.querySelector(".hero-stats");
-if (hero) new IntersectionObserver(onVisible, { threshold: 0.4 }).observe(hero);
+const heroStats = document.querySelector(".hero-stats");
+if (heroStats) new IntersectionObserver(onVisible, { threshold: 0.4 }).observe(heroStats);
 
-// Copy email
+// メールコピー
 const copyBtn = document.getElementById("copyEmail");
 if (copyBtn) {
   copyBtn.addEventListener("click", async () => {
     try {
-      await navigator.clipboard.writeText("contact@aspira-co.jp");
+      await navigator.clipboard.writeText("contact@aspira-corporate.jp");
       copyBtn.textContent = "コピーしました";
       setTimeout(()=> copyBtn.textContent = "メールアドレスをコピー", 1500);
     } catch {
-      window.location.href = "mailto:contact@aspira-co.jp";
+      window.location.href = "mailto:contact@aspira-corporate.jp";
     }
   });
 }
 
-// Mobile nav
+// モバイルナビ
 const menuBtn = document.querySelector(".menu-toggle");
 const nav = document.querySelector("[data-nav]");
 const overlay = document.querySelector("[data-overlay]");

@@ -4,42 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>MIRAL | ホール経営をAIで再設計するダッシュボード</title>
-  <meta name="description" content="MIRALは、AI売上予測・イベント効果分析・撤去増台シミュレーションなど現場の判断に直結する機能を一体化。意思決定を“早く・正しく・再現可能”にします。">
-  <meta name="theme-color" content="#FF7A1A" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="miral.css" />
+  <link rel="stylesheet" href="miral.css?v=3" />
 </head>
 <body>
-  <!-- scroll progress -->
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
-
-  <!-- background ornaments -->
-  <div class="bg-layer" aria-hidden="true">
-    <div class="grid-lines"></div>
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="orb three"></div>
-  </div>
-
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-label="MIRAL ロゴ"></div>
+        <img src="miral.png?v=3" alt="MIRAL" class="brand-logo" />
         <span class="brandname">MIRAL</span>
       </div>
-      <button class="menu-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="navlinks" id="mobile-nav" data-nav>
         <a href="#features">機能</a>
         <a href="#flow">導入まで</a>
         <a href="#security">セキュリティ</a>
         <a href="#contact" class="btn">お問い合わせ</a>
-        <a href="#contact" class="btn primary magnet">デモを依頼</a>
+        <a href="#contact" class="btn primary">デモを依頼</a>
       </nav>
     </div>
     <div class="nav-overlay" data-overlay></div>
-</header>
+  </header>
 
   <section class="hero">
     <div class="container hero-wrap">
@@ -48,33 +34,26 @@
         <h1><span class="brand-underline">ホール経営を、AIで再設計する。</span></h1>
         <p class="lead">
           AI売上予測・機種別改善提案・撤去増台インパクトまでを一体化。<br>
-          “白×オレンジ”のクリーンなUIで、毎日の判断に迷いのない理由を添えます。
+          毎日の判断に迷いのない理由を添えます。
         </p>
         <div class="cta">
-          <a href="#contact" class="btn primary magnet">デモを依頼</a>
+          <a href="#contact" class="btn primary">デモを依頼</a>
           <a href="#features" class="btn ghost">機能を見る</a>
         </div>
 
         <div class="hero-stats">
-          <div class="stat">
-            <div class="val"><span class="num count" data-count="98">0</span><span class="unit">%</span></div>
-            <div class="label">予測の一貫性</div>
-          </div>
-          <div class="stat">
-            <div class="val"><span class="num count" data-count="30">0</span><span class="unit">h</span></div>
-            <div class="label">月間分析時間の削減</div>
-          </div>
-          <div class="stat">
-            <div class="val"><span class="num count" data-count="5">0</span><span class="unit">×</span></div>
-            <div class="label">意思決定スピード</div>
-          </div>
+          <div class="stat"><div class="val"><span class="num count" data-count="98">0</span><span class="unit">%</span></div><div class="label">予測の一貫性</div></div>
+          <div class="stat"><div class="val"><span class="num count" data-count="30">0</span><span class="unit">h</span></div><div class="label">月間分析時間の削減</div></div>
+          <div class="stat"><div class="val"><span class="num count" data-count="5">0</span><span class="unit">×</span></div><div class="label">意思決定スピード</div></div>
         </div>
       </div>
 
+      <!-- 右側パネル：画像はトリミング無しで全体表示 -->
       <div>
-        <div class="screen glow login" id="screen">
-  <div class="scan-bar" aria-hidden="true"></div>
-</div>
+        <div class="screen glow">
+          <img src="./mirallogin.png?v=3" alt="MIRAL ログイン画面" class="screen-photo">
+          <div class="scan-bar" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -82,13 +61,12 @@
   <!-- Capabilities -->
   <section id="features" class="section">
     <div class="container">
-      <div class="reveal">
-        <div class="eyebrow">Capabilities</div>
-        <h2>現場の意思決定を、シンプルに速く。</h2>
-        <p class="lead">専門用語や複雑設定は不要。運用から投資判断まで、欲しい答えに最短で辿り着けるUI/UX。</p>
-      </div>
+      <div class="eyebrow">Capabilities</div>
+      <h2>現場の意思決定を、シンプルに速く。</h2>
+      <p class="lead">専門用語や複雑設定は不要。運用から投資判断まで、欲しい答えに最短で辿り着けるUI/UX。</p>
 
       <div class="grid features" style="margin-top:26px">
+
         <!-- 1) AI売上予測 -->
         <article class="card reveal tilt" data-tilt>
           <div class="shine"></div>
@@ -225,71 +203,51 @@
       </div>
     </div>
   </section>
-
+  <!-- Flow -->
   <section id="flow" class="section" style="padding-top:0">
     <div class="container">
       <div class="grid two-col">
-        <div class="reveal">
+        <div>
           <div class="eyebrow">Onboarding</div>
           <h2>導入は、最短3ステップ</h2>
           <div class="timeline">
-            <div class="step">
-              <div class="badge">1</div>
-              <div>
-                <h3>要件ヒアリング</h3>
-                <p class="lead">現状KPIと運用課題を共有。既存データの確認と連携範囲を定義します。</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="badge">2</div>
-              <div>
-                <h3>PoC/環境セットアップ</h3>
-                <p class="lead">検証用ダッシュボードを短期構築。意思決定フローに合わせてUIと指標を調整。</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="badge">3</div>
-              <div>
-                <h3>本番運用と継続チューニング</h3>
-                <p class="lead">日次〜月次の運用に組み込み、継続的に改善します。</p>
-              </div>
-            </div>
+            <div class="step"><div class="badge">1</div><div><h3>要件ヒアリング</h3><p class="lead">現状KPIと運用課題を共有。既存データの確認と連携範囲を定義します。</p></div></div>
+            <div class="step"><div class="badge">2</div><div><h3>PoC/環境セットアップ</h3><p class="lead">検証用ダッシュボードを短期構築。意思決定フローに合わせてUIと指標を調整。</p></div></div>
+            <div class="step"><div class="badge">3</div><div><h3>本番運用と継続チューニング</h3><p class="lead">日次〜月次の運用に組み込み、継続的に改善します。</p></div></div>
           </div>
         </div>
-        <div class="reveal">
+        <div>
           <div class="cta-band">
             <h3 style="margin-top:0">まずは無償ヒアリングから</h3>
             <p class="lead">最短でROIに繋がる導入計画をご提案します。</p>
-            <a href="#contact" class="btn primary magnet">デモと相談を申し込む</a>
+            <a href="#contact" class="btn primary">デモと相談を申し込む</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Security -->
   <section id="security" class="section" style="padding-top:0">
     <div class="container">
-      <div class="reveal">
-        <div class="eyebrow">Trust</div>
-        <h2>セキュリティとプライバシー</h2>
-        <p class="lead">権限分離、監査、暗号化、通信、ログまで、運用規模に応じて段階的に整備可能です。</p>
-      </div>
+      <div class="eyebrow">Trust</div>
+      <h2>セキュリティとプライバシー</h2>
+      <p class="lead">権限分離、監査、暗号化、通信、ログまで、運用規模に応じて段階的に整備可能です。</p>
       <div class="grid three-col" style="margin-top:22px">
-        <div class="card reveal check"><b>✓</b><div><h3>権限/テナント分離</h3><p>役職・店舗別の厳格なRLS/RBACに対応</p></div></div>
-        <div class="card reveal check"><b>✓</b><div><h3>暗号化/通信</h3><p>静止/転送時ともに暗号化。IP制限や監査証跡の設計も</p></div></div>
-        <div class="card reveal check"><b>✓</b><div><h3>監査ログ</h3><p>ログイン/操作履歴を可視化</p></div></div>
+        <div class="card check"><b>✓</b><div><h3>権限/テナント分離</h3><p>役職・店舗別の厳格なRLS/RBACに対応</p></div></div>
+        <div class="card check"><b>✓</b><div><h3>暗号化/通信</h3><p>静止/転送時ともに暗号化。IP制限や監査証跡の設計も</p></div></div>
+        <div class="card check"><b>✓</b><div><h3>監査ログ</h3><p>ログイン/操作履歴を可視化</p></div></div>
       </div>
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="section" style="padding-top:0">
     <div class="container">
-      <div class="reveal">
-        <div class="eyebrow">Contact</div>
-        <h2>デモのご依頼・お問い合わせ</h2>
-      </div>
+      <div class="eyebrow">Contact</div>
+      <h2>デモのご依頼・お問い合わせ</h2>
       <div class="contact" style="margin-top:18px">
-        <div class="cta-band reveal">
+        <div class="cta-band">
           <h3 style="margin-top:0">メールで連絡</h3>
           <p class="lead">ご要件・対象店舗数・ご希望の導入時期をお知らせください。</p>
           <div class="addr"><b>連絡先:</b> <a href="mailto:contact@aspira-corporate.jp">contact@aspira-corporate.jp</a></div>
@@ -298,13 +256,13 @@
             <button class="btn" id="copyEmail" type="button">メールアドレスをコピー</button>
           </div>
         </div>
-        <div class="reveal">
+        <div>
           <form class="mini-form" onsubmit="return false">
             <label><span>お名前</span><input type="text" placeholder="例）山田 太郎" /></label>
             <label><span>メール</span><input type="email" placeholder="example@example.com" /></label>
             <label><span>ご用件</span><textarea placeholder="導入の背景や現状の課題など"></textarea></label>
-            <a href="mailto:contact@aspira-corporate.jp" class="btn primary magnet">メールで送信</a>
-            <small class="muted">※静的サイトのため送信はお使いのメールクライアント経由になります。</small>
+            <a href="mailto:contact@aspira-corporate.jp" class="btn primary">メールで送信</a>
+            <small class="muted">※送信はお使いのメールクライアント経由になります。</small>
           </form>
         </div>
       </div>
@@ -321,6 +279,6 @@
     </div>
   </footer>
 
-  <script src="miral.js" defer></script>
+  <script src="miral.js?v=3" defer></script>
 </body>
 </html>
