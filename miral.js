@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (y) y.textContent = new Date().getFullYear();
 });
 
-// 数値カウンタ
+// カウンタ
 const runCounter = (el) => {
   const end = Number(el.dataset.count || "0");
   const step = Math.max(1, Math.floor(end / 60));
@@ -29,7 +29,7 @@ if (heroStats) {
   }, { threshold: 0.4 }).observe(heroStats);
 }
 
-// モバイルメニュー制御
+// モバイルメニュー
 const menuBtn = document.querySelector(".menu-toggle");
 const nav = document.querySelector("[data-nav]");
 const overlay = document.querySelector("[data-overlay]");
@@ -45,7 +45,7 @@ const setNav = (open) => {
 menuBtn?.addEventListener("click", () => setNav(!nav.classList.contains("open")));
 overlay?.addEventListener("click", () => setNav(false));
 
-// モバイル時：リンクタップ/スクロール/ハッシュ変更/リサイズで確実に閉じる
+// モバイル時：リンクタップ/ハッシュ変更/スクロール/リサイズで確実に閉じる
 const closeOnMobile = () => { if (window.innerWidth <= 900) setNav(false); };
 document.querySelectorAll("[data-nav] a").forEach(a => a.addEventListener("click", closeOnMobile, { passive: true }));
 window.addEventListener("hashchange", closeOnMobile);

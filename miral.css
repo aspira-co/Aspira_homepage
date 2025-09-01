@@ -1,10 +1,10 @@
-/* ========== tokens ========== */
+/* ===== tokens ===== */
 :root{
   --brand:#FF7A1A; --brand-ink:#EA6E0F; --ink:#0F172A; --muted:#6B7280;
   --card:#fff; --bg:#FFF8F3; --shadow:0 6px 20px rgba(17,24,39,.08);
 }
 
-/* ========== base ========== */
+/* ===== base ===== */
 *{ box-sizing:border-box; }
 html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
 body{
@@ -15,7 +15,7 @@ body{
 img,svg{ max-width:100%; height:auto; display:block; }
 .container{ max-width:1120px; margin:0 auto; padding:0 16px; }
 
-/* ========== header ========== */
+/* ===== header ===== */
 /* PCはsticky、モバイルは通常スクロール（追従しない） */
 .site-header{
   position:sticky; top:0; z-index:50; background:rgba(255,255,255,.65);
@@ -36,23 +36,25 @@ img,svg{ max-width:100%; height:auto; display:block; }
 .menu-toggle{ display:none; background:none; border:0; padding:8px; }
 .menu-toggle span{ display:block; width:22px; height:2px; background:var(--ink); margin:4px 0; border-radius:2px; }
 
+/* モバイル：デフォルト非表示。open時だけ“全画面シート”として表示 */
 .nav-overlay{ display:none; position:fixed; inset:0; background:rgba(0,0,0,.3); z-index:59; }
-
-/* --- モバイルではメニューを完全非表示にして、ハンバーガーで全画面展開 --- */
 @media (max-width:900px){
   .menu-toggle{ display:block; }
-  /* 初期状態：隠す（画面外） */
   .navlinks{
     position:fixed; inset:0; z-index:60; background:#fff;
-    transform:translateY(-105%); transition:transform .28s ease;
-    display:grid; gap:12px; padding:calc(16px + env(safe-area-inset-top)) 18px 18px;
+    /* ← ここが今回のポイント：transformで隠さず、完全に不可視化する */
+    display:none; opacity:0; visibility:hidden; pointer-events:none;
+    padding:calc(16px + env(safe-area-inset-top)) 18px 18px;
+    display:grid; gap:12px; /* 表示時のレイアウト定義は維持 */
   }
-  .navlinks.open{ transform:translateY(0); }     /* 開く */
+  .navlinks.open{
+    display:grid; opacity:1; visibility:visible; pointer-events:auto;
+  }
   .navlinks a{ font-size:18px; }
-  .nav-overlay.show{ display:block; }            /* 背景を押すと閉じる */
+  .nav-overlay.show{ display:block; }
 }
 
-/* ========== hero ========== */
+/* ===== hero ===== */
 .hero{ padding:56px 0 24px; }
 .hero-wrap{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; }
 @media (max-width:900px){ .hero-wrap{ grid-template-columns:1fr; } }
@@ -72,7 +74,7 @@ h1{ font-size:clamp(28px, 4.6vw, 54px); line-height:1.15; margin:.2rem 0 1rem; }
 .btn.ghost{ background:transparent; }
 .btn.primary{ background:var(--brand); color:#fff; border-color:transparent; }
 
-/* ---- 右の黒いスクリーン ---- */
+/* ---- mock screen ---- */
 .screen{
   aspect-ratio:16 / 10; height:auto; border-radius:18px; position:relative; overflow:hidden;
   isolation:isolate;
@@ -83,7 +85,6 @@ h1{ font-size:clamp(28px, 4.6vw, 54px); line-height:1.15; margin:.2rem 0 1rem; }
   position:absolute; inset:0; width:100%; height:100%;
   object-fit:contain; background:#0f172a; z-index:1; filter:saturate(1.03) contrast(1.03);
 }
-/* オレンジのにじみ＋スライド（画像は暗くしない） */
 .screen::before{
   content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
   background:
@@ -149,7 +150,7 @@ h1{ font-size:clamp(28px, 4.6vw, 54px); line-height:1.15; margin:.2rem 0 1rem; }
 .mini-form input,.mini-form textarea{
   width:100%; padding:.7rem .8rem; border-radius:12px; border:1px solid rgba(15,23,42,.12); font:inherit;
 }
-.mini-form textarea{ min-height:120px; resize:vertical; }
+.mini-form textarea{ min高さ:120px; resize:vertical; }
 .muted{ color:#6b7280; font-size:.8rem; }
 
 /* footer */
