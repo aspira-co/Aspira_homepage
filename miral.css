@@ -23,6 +23,29 @@ body{
   padding-right: env(safe-area-inset-right);
 }
 
+/* iOSの自動文字拡大を抑止 */
+html { -webkit-text-size-adjust: 100%; }
+
+/* モバイルは必ず縦1列に */
+@media (max-width: 767px){
+  .cta-row,
+  .metrics{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  /* テキストが絶対配置されていたら解除 */
+  .metric-card * { position: static !important; }
+}
+
+/* 数字や見出しが詰まって重ならないように */
+.metric-value { line-height: 1 !important; font-variant-numeric: tabular-nums; }
+.metric-label, .metric-caption { line-height: 1.25 !important; }
+
+/* 日本語の変な折返し対策 */
+.metric-value, .metric-label, .metric-caption { word-break: keep-all; overflow-wrap: anywhere; }
+
+
 /* Containers */
 .container{
   max-width:1120px;
