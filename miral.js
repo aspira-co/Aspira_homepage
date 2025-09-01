@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (y) y.textContent = new Date().getFullYear();
 });
 
-// カウンタ
+// 数値カウンタ
 const runCounter = (el) => {
   const end = Number(el.dataset.count || "0");
   const step = Math.max(1, Math.floor(end / 60));
@@ -29,10 +29,11 @@ if (heroStats) {
   }, { threshold: 0.4 }).observe(heroStats);
 }
 
-// モバイルナビ
+// モバイルメニュー制御
 const menuBtn = document.querySelector(".menu-toggle");
 const nav = document.querySelector("[data-nav]");
 const overlay = document.querySelector("[data-overlay]");
+
 const setNav = (open) => {
   if (!nav) return;
   nav.classList.toggle("open", open);
@@ -40,12 +41,13 @@ const setNav = (open) => {
   menuBtn?.setAttribute("aria-expanded", open ? "true" : "false");
   document.body.style.overflow = open ? "hidden" : "";
 };
+
 menuBtn?.addEventListener("click", () => setNav(!nav.classList.contains("open")));
 overlay?.addEventListener("click", () => setNav(false));
 
-// ✅ ここを追加：モバイルでリンクを押したら必ず閉じる／ハッシュ変化でも閉じる／スクロール開始でも閉じる
+// モバイル時：リンクタップ/スクロール/ハッシュ変更/リサイズで確実に閉じる
 const closeOnMobile = () => { if (window.innerWidth <= 900) setNav(false); };
-document.querySelectorAll("[data-nav] a").forEach(a => a.addEventListener("click", closeOnMobile));
+document.querySelectorAll("[data-nav] a").forEach(a => a.addEventListener("click", closeOnMobile, { passive: true }));
 window.addEventListener("hashchange", closeOnMobile);
 window.addEventListener("scroll", closeOnMobile, { passive: true });
 window.addEventListener("resize", () => { if (window.innerWidth > 900) setNav(false); });
