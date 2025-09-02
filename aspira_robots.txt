@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.aspira-corporate.jp/sitemap.xml
